@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script type="text/javascript" src="./lib/preshoot.js"></script>
+    <style>
+        .cube1 {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+        }
+        
+        .cube2 {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            width: 50px;
+            height: 50px;
+            background-color: rebeccapurple;
+        }
+        
+        .cube3 {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+        }
+        
+        .cube5 {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            width: 50px;
+            height: 50px;
+            background-color: teal;
+        }
+        
+        .cube4 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: black;
+        }
+        
+        .preshoot {
+            border: 5px solid red;
+        }
+    </style>
+    <script>
+        window.preshootConfig.reset = false;
+    </script>
+</head>
+
+<body>
+    <div class="cube1" preshoot-area></div>
+    <div class="cube2" preshoot-area></div>
+    <div class="cube3" preshoot-area></div>
+    <div class="cube4" preshoot-area></div>
+    <div class="cube5" preshoot-area></div>
+</body>
+
+</html>
