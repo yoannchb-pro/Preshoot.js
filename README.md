@@ -6,6 +6,8 @@ Preshoot.js is a library inspired from <a href="https://mathisonian.github.io/pr
 
 ## Demo
 - https://yoannchb-pro.github.io/Preshoot.js/
+- https://yoannchb-pro.github.io/Preshoot.js/formulaire
+- https://yoannchb-pro.github.io/Preshoot.js/test
 
 ## Import
 ```html
