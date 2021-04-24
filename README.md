@@ -25,6 +25,7 @@ window.preshootConfig = {
     detectWithArea: false, //If the cursor is not going on an object preshoot.js will detect the closer object
     mouseInterval: 30, //The calcul will be make each 30 mouse move loop
     maxDistance: 100, //Execute the function and put the class only if the mouse is between 0% and 100% of the distance
+    reset: true, //Reset the class of the last matched object if there is no matching anymore
     onError: (el, msg) => {
         console.warn("Error during executing function ", {
             error: true,
