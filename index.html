@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <title>PreshootJs || easy to preshoot where the user is going</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="test.js"></script>
+
+    <!-- CONFIG -->
+    <script type="text/javascript" src="./lib/preshoot.js"></script>
+    <script type="text/javascript">
+        window.preshootConfig.debug = false;
+        window.preshootConfig.detectWithArea = false;
+        window.preshootConfig.mouseInterval = 23;
+        window.preshootConfig.maxDistance = 90; //max distance in pourcentage of screen size
+
+        function calcDistance(event) {
+            event.element.textContent = "Distance (px) : " + Math.round(event.distance);
+        }
+
+        function calcPourcentage(event) {
+            event.element.textContent = "Distance (% screen size) : " + Math.round(event.pourcentage);
+        }
+    </script>
+    <style>
+        .preshoot {
+            border: 5px solid red!important;
+        }
+        
+        .debug-preshoot {
+            border-left: 5px solid red!important;
+            border-bottom: 5px solid red!important;
+        }
+        
+        .custom-preshoot {
+            border: 5px solid red!important;
+            color: lightcoral!important;
+            background-color: #fff!important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- DEBUG -->
+    <div class="debug" preshoot-area preshoot-area-class="debug-preshoot">
+        <div>
+            <label>Debug</label>
+            <input type="checkbox" id="debug">
+        </div>
+        <div>
+            <label>Detect with area</label>
+            <input type="checkbox" id="area">
+        </div>
+        <div>
+            <label>Mouse interval</label>
+            <input type="number" value="23" max="200" min="1" id="interval">
+        </div>
+        <div>
+            <label>Max distance %</label>
+            <input type="number" value="90" max="100" min="1" id="distance">
+        </div>
+    </div>
+
+    <!-- PRESENTATION -->
+    <div class="container">
+        <div class="container-header">
+            <h1 preshoot-area>Preshoot.js</h1>
+            <p preshoot-area>Preshoot.js is a library inspired from <a href="https://mathisonian.github.io/premonish">premonish</a> to predict on each object the user is going to execute a function or to change the class of the object.</p>
+            <button preshoot-area>
+                <a href="https://github.com/yoannchb-pro/Togglemenu">Github</a>
+            </button>
+        </div>
+        <div class="container-content">
+            <div class="boutton-container">
+                <button preshoot-area="calcPourcentage">Distance (% screen size) : null</button>
+                <button preshoot-area preshoot-area-class="custom-preshoot">Custom class</button>
+                <button preshoot-area>Normal</button>
+                <button preshoot-area="calcDistance">Distance (px) : null</button>
+            </div>
+
+            <textarea class="code" preshoot-area>
+<script>
+    window.preshootConfig = {
+    debug: false, //Show a line where the cursor is going
+    detectWithArea: false, //If the cursor is not going on an object preshoot.js will detect the closer object
+    mouseInterval: 30, //The calcul will be make each 30 mouse move loop
+    maxDistance: 100, //Execute the function and put the class only if the mouse is between 0% and 100% of the distance
+    onError: (el, msg) => {
+        console.warn("Error during executing function ", {
+            error: true,
+            element: el,
+            message: msg
+        }); //Function to display when there is an error while executing the function of an object
+    }
+}
+</script>
+
+<style>
+    /* Default class when matching */
+    .preshoot{
+        border: 5px solid red!important;
+    }
+</style>
+
+
+<!-- Watching -->
+<!--
+    preshoot-area allow you to observe the object and to execute a function if there is a match
+    preshoot-area or preshoot-area="functionName" (note that an event is returned with dome informations)
+
+    preshoot-area-class will change the class name (by default it will put .preshoot)
+-->
+<div preshoot-area preshoot-area-class="className"></div>
+
+            </textarea>
+        </div>
+    </div>
+</body>
+
+</html>
