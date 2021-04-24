@@ -3,9 +3,14 @@ window.addEventListener('load', function() {
     const areaBtn = document.querySelector('#area');
     const intervalBtn = document.querySelector('#interval');
     const distanceBtn = document.querySelector('#distance');
+    const resetBtn = document.querySelector('#reset');
 
     debugBtn.addEventListener('change', function(event) {
         window.preshootConfig.debug = debugBtn.checked
+    });
+
+    resetBtn.addEventListener('change', function(event) {
+        window.preshootConfig.reset = resetBtn.checked
     });
 
     areaBtn.addEventListener('change', function(event) {
