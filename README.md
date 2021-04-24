@@ -1,8 +1,12 @@
-# PreshootJs v1.0
+# PreshootJs v1.1
 
 Preshoot.js is a library inspired from <a href="https://mathisonian.github.io/premonish">premonish</a> to predict on each object the user is going only with attributes to execute a function or to change the class of the object.
 
 <img alt="preshoot.gif" src="./assets/preshoot.gif">
+
+## Update
+- new option: window.preshootConfig.reset
+- new test pages
 
 ## Demo
 - https://yoannchb-pro.github.io/Preshoot.js/
