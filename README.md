@@ -4,6 +4,9 @@ Preshoot.js is a library inspired from <a href="https://mathisonian.github.io/pr
 
 <img alt="preshoot.gif" src="./assets/preshoot.gif">
 
+## Demo
+- https://yoannchb-pro.github.io/Preshoot.js/
+
 ## Import
 ```html
 <!-- IN THE HEAD -->
